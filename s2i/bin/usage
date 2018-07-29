@@ -1,0 +1,12 @@
+#!/bin/bash -e
+cat <<EOF
+This is the asterisk-centos7 S2I image:
+To use it, install S2I: https://github.com/openshift/source-to-image
+
+Sample invocation:
+
+s2i build https://github.com/akovacs/s2i-asterisk asterisk-centos7 asterisk-app
+
+You can then run the resulting image via:
+docker run asterisk-app
+EOF
