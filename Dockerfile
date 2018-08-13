@@ -22,6 +22,9 @@ RUN yum update -y && \
     yum install -y subversion patch wget git kernel-headers gcc gcc-c++ cpp ncurses ncurses-devel libxml2 libxml2-devel sqlite sqlite-devel openssl-devel newt-devel kernel-devel uuid-devel speex-devel gsm-devel libuuid-devel net-snmp-devel xinetd tar jansson-devel make bzip2 libsrtp libsrtp-devel gnutls-devel doxygen texinfo curl-devel net-snmp-devel neon-devel libedit-devel rpm-build perl-interpreter lksctp-tools-devel perl perl-Test-Simple perl-Module-Load-Conditional && \
     yum clean all
 
+# Copy configuration files
+COPY ./etc/asterisk/ /etc/asterisk
+
 WORKDIR /tmp
 # Build and install OpenSSL 1.1.0h rpm
 RUN wget https://dl.fedoraproject.org/pub/fedora-secondary/updates/28/Everything/i386/Packages/c/crypto-policies-20180425-5.git6ad4018.fc28.noarch.rpm
